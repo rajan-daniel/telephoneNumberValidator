@@ -59,3 +59,17 @@ const isValid = (input) => {
     }
     //replace all numbers in input string with 5's and check against the table//
 }
+
+//check if entry is true of false, if true add list element valid, if false invalid and send as list element
+checkBtn.addEventListener("click", () => {
+    //add list element display correct info
+    const thisInput = input.value;
+    if (isValid(thisInput)) {
+        addResult("Valid US number: " + thisInput);
+    } else {
+        addResult("Invalid US number: " + thisInput);
+    }
+
+    //clean up the text box.
+    input.value = ""
+});
