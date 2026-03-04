@@ -61,9 +61,12 @@ const isValid = (input) => {
 }
 //check if entry is true of false, if true add list element valid, if false invalid and send as list element
 checkBtn.addEventListener("click", () => {
+    //check if user-input "" and send alert to Please provide #
     //add list element display correct info
     const thisInput = input.value;
-    if (isValid(thisInput)) {
+    if (thisInput === "") {
+        window.alert("Please provide a phone number");
+    } else if (isValid(thisInput)) {
         addResult("Valid US number: " + thisInput);
     } else {
         addResult("Invalid US number: " + thisInput);
