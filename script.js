@@ -31,7 +31,15 @@ const isValid = (input) => {
     //1 start check
     if (input.match(/\d/)?.[0] === "1") {
         console.log(input.indexOf(input.match(/\d/)));
-        const convertedInputTo5 = input[input.indexOf(input.match(/\d/))] + input.slice(1).replace(/\d/g, "5");
+        //replace all subseqent #'s with 5 except the first "1" found in the string
+        let firstDigitFound = false;
+        const convertedInputTo5 = input.replace(/\d/g, (digit) => {
+            if (!firstDigitFound && digit === "1") {
+                firstDigitFound = true; // 
+                return digit;
+            }
+            return "5"; // Replace all other digits with '5'
+        });
         console.log(convertedInputTo5);
         for (let i = 0; i < validFormats.length; i++) {
             if (validFormats[i] === convertedInputTo5) {
@@ -51,15 +59,3 @@ const isValid = (input) => {
     }
     //replace all numbers in input string with 5's and check against the table//
 }
-console.log(isValid("(115)515-5535"));
-//update page when BTN clicked clear or other
-
-
-
-
-
-
-
-// resultants
-
-// extras
