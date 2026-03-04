@@ -4,6 +4,18 @@ const results = document.getElementById("history");
 const checkBtn = document.getElementById("check-button");
 const clearBtn = document.getElementById("clear-button");
 
+//create valid phone # formats table
+const validFormats = {
+    1: "1 555-555-5555",
+    2: "1 (555) 555-5555",
+    3: "1(555)555-5555",
+    4: "1 555 555 5555",
+    5: "15555555555",
+    6: "5555555555",
+    7: "555-555-5555",
+    8: "(555)555-5555",
+}
+
 // functions
 //add <li> to history UL>
 const addResult = (input) => {
@@ -12,13 +24,12 @@ const addResult = (input) => {
     results.appendChild(li);
 };
 
-//#isValid checker
+//#isValid checker & addResult invoke if match
 const isValid = (input) => {
-    //check if letters or anything not # insta return false
-    const notNumbers = new RegExp("[^0-9]");
-    return !notNumbers.test(input);
+    //
+    
 }
-console.log(isValid(""));
+
 //update page when BTN clicked clear or other
 
 
