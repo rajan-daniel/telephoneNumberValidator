@@ -48,6 +48,7 @@ const isValid = (input) => {
         }
         return false;
     } else {
+        //replace all numbers in input string with 5's and check against the table//
         const convertedInputTo5 = input.replace(/\d/g, "5");
         console.log(convertedInputTo5);
         for (let i = 0; i < validFormats.length; i++) {
@@ -57,9 +58,7 @@ const isValid = (input) => {
         }
         return false;
     }
-    //replace all numbers in input string with 5's and check against the table//
 }
-
 //check if entry is true of false, if true add list element valid, if false invalid and send as list element
 checkBtn.addEventListener("click", () => {
     //add list element display correct info
@@ -72,4 +71,9 @@ checkBtn.addEventListener("click", () => {
 
     //clean up the text box.
     input.value = ""
+});
+
+//clear button should clear the results list
+clearBtn.addEventListener("click", () => {
+    results.innerHTML = '';
 });
